@@ -33,7 +33,7 @@ namespace ControladorVendasASP.NET.Controllers
             return View(cliente);
         }
 
-        public ActionResult<Cliente> RemoverClienteConfirmacao(int id)
+        public ActionResult<Cliente> RemoverConfirmacao(int id)
         {
             Cliente apagado = _clienteServicos.ListarClientePorId(id);
             return View(apagado);
@@ -51,7 +51,7 @@ namespace ControladorVendasASP.NET.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPut]
+        [HttpPost]
 
         public IActionResult Alterar (Cliente contato)
         {

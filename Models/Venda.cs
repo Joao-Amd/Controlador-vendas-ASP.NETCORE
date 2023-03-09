@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-#nullable disable
 
 namespace ControladorVendasASP.NET.Models
 {
@@ -13,9 +12,9 @@ namespace ControladorVendasASP.NET.Models
         }
 
         public int Id { get; set; }
-        public int? ClienteId { get; set; }
-        public DateTime? DataVenda { get; set; }
-        public decimal? TotalVenda { get; set; }
+        public int ClienteId { get; set; }
+        public DateTime DataVenda { get; set; }
+        public decimal TotalVenda { get; set; }
         public string Observacoes { get; set; }
 
         public virtual Cliente Cliente { get; set; }

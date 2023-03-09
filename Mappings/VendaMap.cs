@@ -25,7 +25,7 @@ namespace ControleVendasAPS.NET.CORE.Mappings
                 .HasColumnName("total_venda");
 
             builder.HasOne(d => d.Cliente)
-                .WithMany(p => p.TbVenda)
+                .WithMany(p => p.Venda)
                 .HasForeignKey(d => d.ClienteId)
                 .HasConstraintName("tb_vendas_cliente_id_fkey");
         }

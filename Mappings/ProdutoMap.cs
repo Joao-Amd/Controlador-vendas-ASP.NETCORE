@@ -25,7 +25,7 @@ namespace ControleVendasAPS.NET.CORE.Mappings
             builder.Property(e => e.QtdEstoque).HasColumnName("qtd_estoque");
 
             builder.HasOne(d => d.For)
-                .WithMany(p => p.TbProdutos)
+                .WithMany(p => p.Produtos)
                 .HasForeignKey(d => d.ForId)
                 .HasConstraintName("tb_produtos_for_id_fkey");
         }

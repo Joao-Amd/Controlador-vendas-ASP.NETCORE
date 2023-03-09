@@ -11,11 +11,11 @@ namespace ControladorVendasASP.NET.Servico
 {
     public class ClienteServicos : IClienteServicos
     {
-        private readonly DB_Controle_vendasContext _dbContext;
+        private readonly DbControleVendasContext _dbContext;
 
-        public ClienteServicos(DB_Controle_vendasContext dbContex)
+        public ClienteServicos(DbControleVendasContext dbContex)
         {
-            dbContex = _dbContext;
+            _dbContext = dbContex;
         }
         public Cliente ListarClientePorId(int id)
         {
@@ -28,9 +28,7 @@ namespace ControladorVendasASP.NET.Servico
         public Cliente InserirCliente(Cliente cliente)
         {
             _dbContext.Clientes.Add(cliente);
-            if (cliente.Cpf.Equals(cliente.Cpf)){
-                throw new Exception("Cnpj já informado");
-            }
+           
              _dbContext.SaveChanges();
             return cliente;
         }

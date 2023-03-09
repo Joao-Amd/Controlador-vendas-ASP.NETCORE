@@ -23,12 +23,12 @@ namespace ControleVendasAPS.NET.CORE.Mappings
             builder.Property(e => e.VendaId).HasColumnName("venda_id");
 
             builder.HasOne(d => d.Produto)
-                .WithMany(p => p.TbItensvenda)
+                .WithMany(p => p.Itensvenda)
                 .HasForeignKey(d => d.ProdutoId)
                 .HasConstraintName("tb_itensvendas_produto_id_fkey");
 
             builder.HasOne(d => d.Venda)
-                .WithMany(p => p.TbItensvenda)
+                .WithMany(p => p.Itensvenda)
                 .HasForeignKey(d => d.VendaId)
                 .HasConstraintName("tb_itensvendas_venda_id_fkey");
         }

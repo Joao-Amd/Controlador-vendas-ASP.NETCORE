@@ -4,17 +4,15 @@ using ControleVendasAPS.NET.CORE.Mappings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-#nullable disable
-
 namespace ControladorVendasASP.NET.Context
 {
-    public partial class DB_Controle_vendasContext : DbContext
+    public partial class DbControleVendasContext : DbContext
     {
-        public DB_Controle_vendasContext()
+        public DbControleVendasContext()
         {
         }
 
-        public DB_Controle_vendasContext(DbContextOptions<DB_Controle_vendasContext> options)
+        public DbControleVendasContext(DbContextOptions<DbControleVendasContext> options)
             : base(options)
         {
         }

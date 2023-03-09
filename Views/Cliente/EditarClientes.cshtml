@@ -11,7 +11,7 @@
 
 
 </div>
-<form asp-controller="Cliente" asp-action="EditarCliente" method="post">
+<form asp-controller="Cliente" asp-action="Alterar" method="post">
 
     <input type="hidden" asp-for="Id"/>
    <div class="form-group">
@@ -74,5 +74,5 @@
     <input type="text"asp-for="Estado" class="form-control" placeholder="Digite o estado">
   </div>
   <button type="submit" class="btn btn-primary">Alterar</button>
-  <a class="btn btn-secondary" asp-controller="Contato" asp-action="Index" role="button">Voltar</a>
+  <a class="btn btn-secondary" asp-controller="Cliente" asp-action="Index" role="button">Voltar</a>
 </form>

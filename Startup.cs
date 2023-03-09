@@ -1,4 +1,3 @@
-using ControladorVendasASP.NET.Context;
 using ControladorVendasASP.NET.Servico;
 using ControladorVendasASP.NET.Servico.Interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -14,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using ControladorVendasASP.NET.Context;
 
 namespace ControleVendasAPS.NET.CORE
 {
@@ -31,7 +31,7 @@ namespace ControleVendasAPS.NET.CORE
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<DB_Controle_vendasContext>(options =>
+            services.AddDbContext<DbControleVendasContext>(options =>
             {
                 options.UseNpgsql(Configuration.GetConnectionString("DataBase"));
             });
@@ -40,9 +40,7 @@ namespace ControleVendasAPS.NET.CORE
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ControladorVendas", Version = "v1" });
             });
             services.AddScoped<IClienteServicos, ClienteServicos>();
-            /*services.AddEntityFrameworkNpgsql().
-                 AddDbContext<DB_Controle_vendasContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DataBase")));
-            */
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
