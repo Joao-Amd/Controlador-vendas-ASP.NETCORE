@@ -14,6 +14,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using ControladorVendasASP.NET.Context;
+using ControleVendasAPS.NET.CORE.Servico.Interfaces;
+using ControleVendasAPS.NET.CORE.Servico;
 
 namespace ControleVendasAPS.NET.CORE
 {
@@ -40,6 +42,7 @@ namespace ControleVendasAPS.NET.CORE
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ControladorVendas", Version = "v1" });
             });
             services.AddScoped<IClienteServicos, ClienteServicos>();
+            services.AddScoped<IFornecedorServicos, FornecedorServicos>();
             
         }
 

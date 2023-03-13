@@ -53,9 +53,9 @@ namespace ControladorVendasASP.NET.Controllers
 
         [HttpPost]
 
-        public IActionResult Alterar (Cliente contato)
+        public IActionResult Alterar (Cliente cliente)
         {
-            _clienteServicos.EditarClientes(contato);
+            _clienteServicos.EditarClientes(cliente);
             return RedirectToAction("Index");
         }
 

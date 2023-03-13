@@ -1,0 +1,65 @@
+﻿@using ControladorVendasASP.NET.Models
+@model List<Fornecedor>
+@{
+    ViewData["Title"] = "Fornecedor";
+}
+
+<div class="text-center">
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary" role="button" asp-controller="Fornecedor" asp-action="InserirFornecedor">Adcionar novo Fornecedor</a>
+    </div>
+    <br>
+    <h1 class="display-4">Listagem de Fornecedores</h1>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cnpj</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Celular</th>
+                <th scope="col">Cep</th>
+                <th scope="col">Endereco</th>
+                <th scope="col">Número</th>
+                <th scope="col">Complemento</th>
+                <th scope="col">Bairro</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (Fornecedor fornecedor in Model)
+                {
+                    <tr>
+                        <th scope="row">@fornecedor.Id</th>
+                        <td>@fornecedor.Nome</td>
+                        <td>@fornecedor.Cnpj</td>
+                        <td>@fornecedor.Email</td>
+                        <td>@fornecedor.Telefone</td>
+                        <td>@fornecedor.Celular</td>
+                        <td>@fornecedor.Cep</td>
+                        <td>@fornecedor.Endereco</td>
+                        <td>@fornecedor.Numero</td>
+                        <td>@fornecedor.Complemento</td>
+                        <td>@fornecedor.Bairro</td>
+                        <td>@fornecedor.Cidade</td>
+                        <td>@fornecedor.Estado</td>
+                        
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a role="button" class="btn btn-primary" asp-route-id="@fornecedor.Id" asp-controller="Fornecedor" asp-action="Editarfornecedor">Editar</a>
+                                <a role="button" class="btn btn-danger" asp-route-id="@fornecedor.Id" asp-controller="Fornecedor" asp-action="RemoverConfirmacao">Remover</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
